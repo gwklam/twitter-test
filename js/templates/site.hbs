@@ -1,0 +1,22 @@
+<!-- Loading New Years Eve Twitter Account -->
+<script type='text/javascript'>//<![CDATA[
+$(window).on('load', function() {
+	var searchTerm = 'nyevancouver',
+    numOfTweets = 10,
+    $ul = $('ul'),
+    list='',
+    url = 'http://silentsleeper.com/twittertest/php/twitterapi.php?q=' + searchTerm + '&count=' + numOfTweets;
+	$.get(url, function (data) {
+		$.each(data.statuses, function () {
+			list += '<li>'+ this.text +'</li>';
+		});
+    $ul.html(list);
+	});
+});//]]> 
+</script>
+
+<div id="site-container"><div class="header-container" id="header-container"><header class="header">
+Twitter Test
+</header></div>
+</div>
+
